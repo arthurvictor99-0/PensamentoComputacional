@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-brasil">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEMESTRE</title>
+    <style>
+        h1 {
+            color: rgb(47, 0, 255);
+        }
+        button {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <form method="POST" class="formLogin" onsubmit="return false;">
+            <h1>Login</h1>
+            <p><b>Digite seus dados de acesso</b></p>
+            <label for="nome">Seu nome</label>
+            <input type="text" id="nome" placeholder="Digite seu nome" autofocus="True" /> <br><br>
+            
+            <label for="Nota1">Digite sua primeira nota</label>
+            <input type="text" id="Nota1" placeholder="Digite sua primeira nota" autofocus="True" /> <br><br>
+            
+            <label for="Nota2">Digite sua segunda nota</label>
+            <input type="text" id="Nota2" placeholder="Digite sua segunda nota" autofocus="True" /> <br><br>
+            
+            <label for="Nota3">Digite sua terceira nota</label>
+            <input type="text" id="Nota3" placeholder="Digite sua terceira nota" autofocus="True" /> <br><br>
+        
+            <button type="button" class="btn" onclick="calcularMedia()">Calcular</button>
+        </form>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function calcularMedia(){
+            var nota1 = parseFloat(document.getElementById('Nota1').value);
+            var nota2 = parseFloat(document.getElementById('Nota2').value);
+            var nota3 = parseFloat(document.getElementById('Nota3').value);
+            var media = (nota1 + nota2 + nota3) / 3;
+
+            document.getElementById('resultado').innerHTML = "Sua média é: " + media.toFixed(2);
+        }
+    </script>
+</body>
+</html>
+    
+
+
